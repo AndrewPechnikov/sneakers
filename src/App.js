@@ -15,7 +15,7 @@ function App() {
         <img className='mr-10' width={40} height={40} src={logo} alt="" />
         <div className="headerInfo ">
           <h3 className='text-uppercase'>React Sneakers</h3>
-          <p>Магазин найкращих кросівок</p>
+          <p className='opacity-5'>Магазин найкращих кросівок</p>
         </div>
       </div>
 
