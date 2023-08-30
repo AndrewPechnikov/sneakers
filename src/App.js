@@ -1,8 +1,10 @@
 
 import { ReactComponent as Cart } from './img/cart.svg'
 import logo from './img/logo.png'
+import sneakers from './img/Sneakers/1.jpg'
 import { ReactComponent as Heart } from './img/heart.svg'
 import { ReactComponent as User } from './img/user.svg'
+import { ReactComponent as Plus } from './img/plus.svg'
 
 
 function App() {
@@ -33,7 +35,180 @@ function App() {
     </header>
 
     <div className="content p-40">
-      <h1>Всі кросівки</h1>
+      <h1 className='mb-40'>Всі кросівки</h1>
+      <div className="card-list">
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+        <div className="card d-flex flex-column aligh-center ">
+          <img width={153} src={sneakers} alt="" />
+          <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+          <div className='d-flex justify-between align-center'>
+            <div className='d-flex flex-column '>
+              <span>Ціна</span>
+              <b>3 999 грн.</b>
+            </div>
+            <button className='button'>
+              <Plus width={11} height={11} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
     </div>
 
   </div>
