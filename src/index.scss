@@ -1,8 +1,9 @@
 body {
 	margin: 0;
-	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	background-color: #e7f6ff;
+}
+* {
+	font-family: 'Inter', system-ui;
 }
 
 .wrapper {
@@ -45,7 +46,7 @@ header {
 .card {
 	border: 1px solid #f3f3f3;
 	padding: 20px;
-	width: 230px;
+	width: 231.25px;
 	border-radius: 40px;
 	h5 {
 		font-weight: 400;
@@ -75,8 +76,36 @@ header {
 .button {
 	background: #ffffff;
 	border: 1px solid #f2f2f2;
+	fill: #ececec;
 	border-radius: 8px;
 	height: 32px;
 	width: 32px;
 	cursor: pointer;
+	&__heart {
+		position: absolute;
+	}
+
+	&__heart--active {
+		background-color: #fef0f0;
+		fill: #ff8585;
+	}
+
+	&__plus--checked {
+		background-color: #fef0f0;
+		fill: #ff8585;
+
+		background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
+	}
+}
+
+.search-blok {
+	border: 1px solid #f3f3f3;
+	border-radius: 10px;
+	padding: 0 15px;
+	input {
+		border: 0;
+		padding: 16px;
+		font-size: 16px;
+		width: 200px;
+	}
 }
