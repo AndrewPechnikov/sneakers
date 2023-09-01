@@ -67,7 +67,7 @@ header {
 	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 	transition-duration: 250ms;
 	&:hover {
-		box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+		box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.05);
 		transform: translateY(-15px);
 		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 		transition-duration: 250ms;
@@ -104,6 +104,21 @@ header {
 
 		background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
 	}
+
+	&__remove {
+		opacity: 0.5;
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition-duration: 250ms;
+		.remove {
+			transform: rotate(45deg);
+		}
+	}
+
+	&__remove:hover {
+		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition-duration: 250ms;
+		opacity: 1;
+	}
 }
 
 .search-blok {
@@ -115,5 +130,85 @@ header {
 		padding: 16px;
 		font-size: 16px;
 		width: 200px;
+	}
+}
+
+.overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba(0, 0, 0, 0.1);
+	z-index: 9;
+}
+
+.drawer {
+	position: absolute;
+	width: 420px;
+	height: 100%;
+	right: 0;
+	top: 0px;
+	padding: 30px;
+	gap: 20;
+
+	background: #ffffff;
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+
+	h2 {
+		margin: 0;
+	}
+}
+
+.items {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.cartItem {
+	border: 1px solid #f3f3f3;
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 20px;
+	p {
+		font-size: 16px;
+	}
+
+	b {
+		font-size: 14px;
+	}
+
+	&__text {
+		width: 200px;
+	}
+}
+
+.cartTotalBlock {
+	justify-self: flex-end;
+	li {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 20px;
+	}
+	div {
+		flex: 1;
+		height: 1px;
+		border-bottom: 1px dashed #dfdfdf;
+		position: relative;
+		top: -4px;
+		margin: 0 7px;
+	}
+	button {
+		width: 100%;
+		height: 55px;
+		background: #9dd558;
+		border-radius: 18px;
+		border: 0px;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 500;
 	}
 }
