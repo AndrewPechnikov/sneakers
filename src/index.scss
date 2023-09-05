@@ -64,12 +64,12 @@ header {
 	b {
 		font-size: 13px;
 	}
-	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: ease-in-out;
 	transition-duration: 250ms;
 	&:hover {
 		box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.05);
 		transform: translateY(-15px);
-		transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: ease-in-out;
 		transition-duration: 250ms;
 	}
 }
@@ -80,6 +80,8 @@ header {
 	gap: 25px;
 	flex-wrap: wrap;
 }
+
+
 
 .button {
 	background: #ffffff;
@@ -104,6 +106,7 @@ header {
 
 		background: linear-gradient(180deg, #89f09c 0%, #3cc755 100%);
 	}
+
 
 	&__remove {
 		opacity: 0.5;
@@ -166,13 +169,16 @@ header {
 	flex: 1;
 	flex-direction: column;
 	gap: 20px;
+	overflow: auto;
+	margin-bottom: 40px;
 }
 
 .cartItem {
 	border: 1px solid #f3f3f3;
 	border-radius: 20px;
-	overflow: hidden;
+	// overflow: hidden;
 	padding: 20px;
+
 	p {
 		font-size: 16px;
 	}
@@ -186,8 +192,40 @@ header {
 	}
 }
 
+.greenBtn{
+	width: 100%;
+		height: 55px;
+		background: #9dd558;
+		border-radius: 18px;
+		border: 0px;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease-in-out;
+
+		Arrow{
+			margin-left: 25%;
+		}
+
+		&:hover{
+			background-color: lighten($color: #9dd558, $amount: 5%);
+		}
+
+		&:active{
+			background-color: darken($color: #9dd558, $amount: 5%);
+		}
+
+}
+
 .cartTotalBlock {
 	justify-self: flex-end;
+	
+	ul{
+
+		margin-bottom: 40px !important;
+	}
+
 	li {
 		display: flex;
 		align-items: flex-end;
@@ -201,14 +239,23 @@ header {
 		top: -4px;
 		margin: 0 7px;
 	}
-	button {
-		width: 100%;
-		height: 55px;
-		background: #9dd558;
-		border-radius: 18px;
-		border: 0px;
-		color: #ffffff;
-		font-size: 16px;
-		font-weight: 500;
+
+	.greenBtn{
+		position: relative;
+
+		
+		&:hover{
+			svg{
+			transform: translateX(10px);
+			}
+		}
+		svg{
+			position: absolute;
+			right: 30px;
+			top: 20px;
+			transition: transform 0.15s ease-in-out;
+			
+		}
 	}
+	
 }
