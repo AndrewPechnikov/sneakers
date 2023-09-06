@@ -1,11 +1,12 @@
 import { ReactComponent as Heart } from './../../img/heart.svg'
 import { ReactComponent as Check } from './../../img/check.svg'
 import { ReactComponent as HeartActive } from './../../img/heart-active.svg'
-import sneakers from './../../img/Sneakers/1.jpg'
 
 
 
-const Card = () => {
+
+
+const Card = ({ title, price, sneakers }) => {
     return (
         <div className="card d-flex flex-column aligh-center ">
             <button className='button button__heart button__heart--active d-flex justify-center align-center'>
@@ -13,11 +14,11 @@ const Card = () => {
             </button>
 
             <img width={153} src={sneakers} alt="" />
-            <h5>Чоловічі кроссівки Nike Kyrie 7</h5>
+            <h5>{title}</h5>
             <div className='d-flex justify-between align-center'>
                 <div className='d-flex flex-column '>
                     <span>Ціна</span>
-                    <b>3 999 грн.</b>
+                    <b>{price}</b>
                 </div>
                 <button className='button button__plus--checked'>
                     <Check width={11} height={11} />
