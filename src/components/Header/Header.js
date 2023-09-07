@@ -5,7 +5,7 @@ import { ReactComponent as User } from './../../img/user.svg'
 import { ReactComponent as Cart } from './../../img/cart.svg'
 import logo from './../../img/logo.png'
 
-const Header = () => {
+const Header = (props) => {
 	return (
 		<header className='d-flex justify-between align-center p-40'>
 			<div className="d-flex align-center">
@@ -17,10 +17,9 @@ const Header = () => {
 			</div>
 
 			<ul className="headerRight d-flex ">
-				<li className='mr-30'>
-					<Cart className='  cart mr-5 ' />
+				<li className='mr-30 cu-p' onClick={props.onClickCart}>
+					<Cart className='  cart mr-5  ' />
 					<span>725 грн.</span>
-
 				</li>
 				<li className='mr-30'>
 					<Heart className='heart' />

@@ -1,29 +1,48 @@
 
 
 import { ReactComponent as Search } from './img/search.svg'
-import Card from './components/Card/Card'
+import Card from './components/Card'
 import Header from './components/Header/Header'
 import Drawer from './components/Drawer/Drawer'
-import sneakers from './img/Sneakers/1.jpg'
+import sneakers1 from './img/Sneakers/1.jpg'
+import sneakers2 from './img/Sneakers/2.jpg'
+import sneakers3 from './img/Sneakers/3.jpg'
+import sneakers4 from './img/Sneakers/4.jpg'
+import { useEffect, useState } from 'react'
 
 
 
 
 
-const arr = [
-  { name: 'Чоловічі кросівки Nike Kyrie 7', price: 3999 },
-  { name: 'Чоловічі кросівки Nike Airmax 270', price: 2999 }
-]
+
+
 
 
 
 
 function App() {
+
+  useEffect(() => {
+    fetch("https://64f9bcfb4098a7f2fc14e8a4.mockapi.io/itemas")
+      .then(res => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json)
+      })
+
+  }, [])
+
+
+
+  const [items, setItems] = useState([])
+
+  const [cartOpened, setCartOpened] = useState(false)
   return <div className="wrapper clear">
 
+    {cartOpened && <Drawer onClickClose={() => { setCartOpened(false) }} />}
 
-    <Drawer />
-    <Header />
+    <Header onClickCart={() => { setCartOpened(true) }} />
 
     <div className="content p-40">
 
@@ -40,8 +59,8 @@ function App() {
 
       <div className="card-list">
         {
-          arr.map((obj) => {
-            return <Card title={obj.name} price={obj.price} img={sneakers} />
+          items.map((obj, index) => {
+            return <Card key={index} title={obj.name} price={obj.price} img={obj.sneakers} />
           })
         }
 

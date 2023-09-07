@@ -5,14 +5,14 @@ import { ReactComponent as Plus } from './../../img/plus.svg'
 import { ReactComponent as Arrow } from './../../img/arrow.svg'
 
 
-const Drawer = () => {
+const Drawer = (props) => {
 	return (
-		<div style={{ display: 'none' }} className="overlay">
+		<div className="overlay">
 
 			<div className="drawer d-flex flex-column">
 				<div className='cartHeader d-flex justify-between'>
 					<h2 className='mb-30' >Корзина</h2>
-					<button className='button button__remove'>
+					<button className='button button__remove' onClick={props.onClickClose} >
 						<Plus className='remove' width={11} height={11} />
 					</button>
 				</div>
