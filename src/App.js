@@ -5,6 +5,10 @@ import Drawer from './components/Drawer/Drawer';
 import { useEffect, useState } from 'react';
 
 function App() {
+
+
+
+
   useEffect(() => {
     fetch('https://64f9bcfb4098a7f2fc14e8a4.mockapi.io/itemas')
       .then((res) => {
@@ -16,16 +20,16 @@ function App() {
   }, []);
 
   const [items, setItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [cartOpened, setCartOpened] = useState(false);
+
+  const addItemToCart = (obj) => {
+    setCartItems(prev => [...prev, obj])
+  }
 
   return (
     <div className="wrapper clear">
-      {cartOpened && (
-        <Drawer
-          onClickClose={() => {
-            setCartOpened(false);
-          }}
-        />
+      {cartOpened && (<Drawer items={cartItems} onClickClose={() => { setCartOpened(false); }} />
       )}
 
       <Header
@@ -43,13 +47,15 @@ function App() {
           </div>
         </div>
         <div className="card-list">
-          {items.map((obj, index) => {
+          {items.map((item, index) => {
             return (
               <Card
-                key={index}
-                title={obj.name}
-                price={obj.price}
-                img={obj.url}
+                key={item.id}
+                name={item.name}
+                price={item.price}
+                img={item.url}
+                onPlus={(obj) => addItemToCart(obj)}
+                onFavorite={() => console.log("heart")}
               />
             );
           })}

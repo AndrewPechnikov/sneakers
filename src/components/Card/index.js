@@ -6,15 +6,17 @@ import { ReactComponent as Plus } from './../../img/plus.svg';
 import styles from './Card.module.scss';
 console.log(styles);
 
-const Card = ({ title, price, img }) => {
+const Card = ({ name, price, img, onFavorite, onPlus }) => {
     const [isAddedProduct, setAddedProductState] = useState(false);
     const [isAddFavorite, setAddedFavoriteState] = useState(false);
 
     const onClickAddProduct = () => {
+        onPlus({ name, price, img })
         setAddedProductState(!isAddedProduct);
     };
 
     const onClickAddFavoriteProduct = () => {
+        onFavorite()
         setAddedFavoriteState(!isAddFavorite);
     };
 
@@ -39,7 +41,7 @@ const Card = ({ title, price, img }) => {
             )}
 
             <img width={153} src={img} alt="" />
-            <h5>{title}</h5>
+            <h5>{name}</h5>
 
             <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column ">
