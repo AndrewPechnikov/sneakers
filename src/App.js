@@ -19,17 +19,23 @@ function App() {
       });
   }, []);
 
+
+
+
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [cartOpened, setCartOpened] = useState(false);
 
-  const addItemToCart = (obj) => {
-    setCartItems(prev => [...prev, obj])
+  const addItemToCart = (obj, isAddedProduct) => {
+    if (!isAddedProduct) {
+      setCartItems(prev => [...prev, obj])
+    }
+
   }
 
   return (
     <div className="wrapper clear">
-      {cartOpened && (<Drawer items={cartItems} onClickClose={() => { setCartOpened(false); }} />
+      {cartOpened && (<Drawer items={cartItems} functionSetCart={(i) => setCartItems(i)} onClickClose={() => { setCartOpened(false); }} />
       )}
 
       <Header
@@ -54,7 +60,7 @@ function App() {
                 name={item.name}
                 price={item.price}
                 img={item.url}
-                onPlus={(obj) => addItemToCart(obj)}
+                onPlus={(obj, isAddedProduct) => addItemToCart(obj, isAddedProduct)}
                 onFavorite={() => console.log("heart")}
               />
             );

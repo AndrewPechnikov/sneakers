@@ -2,11 +2,24 @@
 
 import { ReactComponent as Plus } from './../../img/plus.svg'
 import { ReactComponent as Arrow } from './../../img/arrow.svg'
+import { useEffect, useState } from 'react';
 
 
-const Drawer = ({ onClickClose, items = [] }) => {
+
+
+const Drawer = ({ onClickClose, items = [], functionSetCart }) => {
+
+
+
+
+
+
+
+
+
 	return (
-		<div className="overlay">
+
+		< div className="overlay" >
 
 			<div className="drawer d-flex flex-column">
 				<div className='cartHeader d-flex justify-between'>
@@ -24,10 +37,9 @@ const Drawer = ({ onClickClose, items = [] }) => {
 								<div className='cartItem__text'>
 									<p className='mb-5'>{obj.name}</p>
 									<b>{obj.price}</b>
-
 								</div>
 								<button className='button button__remove'>
-									<Plus className='remove' width={11} height={11} />
+									<Plus className='remove' width={11} height={11} onClick={() => functionSetCart(items.filter((obj, i) => i !== index))} />
 								</button>
 							</div>
 						)
@@ -54,7 +66,7 @@ const Drawer = ({ onClickClose, items = [] }) => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</ div >
 	)
 }
 
