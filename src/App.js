@@ -1,5 +1,5 @@
 import { ReactComponent as Search } from './img/search.svg';
-import Card from './components/Card';
+import Card from './components/Card/Card';
 import Header from './components/Header/Header';
 import Drawer from './components/Drawer/Drawer';
 import { useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ function App() {
         return res.json();
       })
       .then((json) => {
+        json.map((obj) => obj.isAdd = false)
         setItems(json);
       });
   }, []);
@@ -26,16 +27,24 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartOpened, setCartOpened] = useState(false);
 
-  const addItemToCart = (obj, isAddedProduct) => {
-    if (!isAddedProduct) {
+  console.log(items);
+
+  const addItemToCart = (obj) => {
+    console.log(obj)
+    if (obj.isAdd) {
       setCartItems(prev => [...prev, obj])
     }
-
+    else {
+      setCartItems(prev => prev.filter((item, i) => obj.id !== item.id))
+    }
   }
 
   return (
     <div className="wrapper clear">
-      {cartOpened && (<Drawer items={cartItems} functionSetCart={(i) => setCartItems(i)} onClickClose={() => { setCartOpened(false); }} />
+      {cartOpened && (<Drawer
+        items={cartItems}
+        functionSetCart={(i) => setCartItems(i)}
+        onClickClose={() => { setCartOpened(false); }} />
       )}
 
       <Header
@@ -57,9 +66,11 @@ function App() {
             return (
               <Card
                 key={item.id}
+                id={item.id}
                 name={item.name}
                 price={item.price}
                 img={item.url}
+                isAdd={item.isAdd}
                 onPlus={(obj, isAddedProduct) => addItemToCart(obj, isAddedProduct)}
                 onFavorite={() => console.log("heart")}
               />

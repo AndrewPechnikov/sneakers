@@ -2,7 +2,7 @@
 
 import { ReactComponent as Plus } from './../../img/plus.svg'
 import { ReactComponent as Arrow } from './../../img/arrow.svg'
-import { useEffect, useState } from 'react';
+
 
 
 
@@ -39,7 +39,12 @@ const Drawer = ({ onClickClose, items = [], functionSetCart }) => {
 									<b>{obj.price}</b>
 								</div>
 								<button className='button button__remove'>
-									<Plus className='remove' width={11} height={11} onClick={() => functionSetCart(items.filter((obj, i) => i !== index))} />
+									<Plus className='remove' width={11} height={11}
+										onClick={() => functionSetCart(items.filter((obj, i) => {
+											obj.isAdd = !obj.isAdd
+
+											return i !== index
+										}))} />
 								</button>
 							</div>
 						)

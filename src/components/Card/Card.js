@@ -6,15 +6,19 @@ import { ReactComponent as Plus } from './../../img/plus.svg';
 import styles from './Card.module.scss';
 console.log(styles);
 
-const Card = ({ name, price, img, onFavorite, onPlus }) => {
-    const [isAddedProduct, setAddedProductState] = useState(false);
-    const [isAddFavorite, setAddedFavoriteState] = useState(false);
+const Card = ({ name, price, img, onFavorite, onPlus, id, isAdd }) => {
+    const [isAddedProduct, setAddedProductState] = useState(isAdd);
+    const [isAddFavorite, setAddedFavoriteState] = useState(isAdd);
 
     const onClickAddProduct = () => {
         if (!isAddedProduct) {
-            onPlus({ name, price, img }, isAddedProduct)
-            setAddedProductState(!isAddedProduct);
+            onPlus({ name, price, img, id, isAdd: true })
+
         }
+        else {
+            onPlus({ name, price, img, id, isAdd: false })
+        }
+        setAddedProductState(!isAddedProduct);
     };
 
     const onClickAddFavoriteProduct = () => {
